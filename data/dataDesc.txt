@@ -1,0 +1,2 @@
+X - Independent Variable
+Y - Dependent Variable
