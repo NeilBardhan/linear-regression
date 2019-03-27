@@ -1,10 +1,10 @@
 # Linear Regression
 
-<center>
- +---------------------+
- |   Work in progress  |
- +---------------------+
- </center>
+<p align = "center">
+ +---------------------+ <br>
+ |   Work in progress  | <br>
+ +---------------------+ <br>
+ </p>
 
 Performing the following
   * simple linear regression
