@@ -51,6 +51,7 @@ def simpleLinear(filename):
         b0pval = stats.t.sf(abs(b0Tstat), df.shape[0] - 2)*2
         b1pval = stats.t.sf(abs(b1Tstat), df.shape[0] - 2)*2
         Rsquared = 1 - rss/tss
+        adjRsquared = 1 - ((1 - Rsquared) * (df.shape[0] - 1))/(df.shape[0] - 2)
         fStat = (tss - rss)/(rss/(df.shape[0] - 2))
         # print("yhat ->", yhat)
         # print("residuals ->", residuals)
@@ -78,6 +79,7 @@ def simpleLinear(filename):
             "tss" : round(tss, 4),
             "rse" : round(rse, 4),
             "R_squared" : round(Rsquared, 4),
+            "adjRsquared" : round(adjRsquared, 4),
             "f_statistic": round(fStat, 2),
             "degrees_of_freedom" : df.shape[0] - 2,
             "predicted_y" : yhat,
@@ -113,9 +115,10 @@ def main():
     print("RSE ->", results['rse'])
     print("Degrees of Freedom ->", results['degrees_of_freedom'])
     print("R squared ->", results['R_squared'])
+    print("Adjusted R Square ->", results['adjRsquared'])
     print("F Statistic ->", results['f_statistic'])
     print("\n****************************\n")
-    # pprint.pprint(results, width = 1)
+    pprint.pprint(results, width = 1)
 
 if __name__ == "__main__":
     main()
