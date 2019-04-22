@@ -1,5 +1,6 @@
 import os
 import time
+import json
 import numpy
 import pandas as pd
 import csv
@@ -99,6 +100,9 @@ def main():
     path = os.getcwd()
     filename = path + '\\' + "autoInsur.csv"
     results = simpleLinear(filename)
+    with open('simpleLinearModel.json', 'w') as outfile:
+        json.dump(results, outfile)
+    print("Model written to file")
     print("Intercept ->", results['intercept']['b0'])
     print("Standard Error b0 ->", results['intercept']['std_error'])
     print("b0 95 percent Confidence Interval ->", results['intercept']['confidence_interval'])
