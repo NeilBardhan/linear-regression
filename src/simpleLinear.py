@@ -1,18 +1,12 @@
 import os
 import time
 import json
-import numpy
-import pandas as pd
-import csv
-import matplotlib.pyplot as plt
 import math
+import pandas as pd
 from scipy import stats
-import pprint
 from prettytable import PrettyTable
 
-# filenames = ["test10k.csv", "test20k.csv"]
 # filenames = ["autoInsur.csv"]
-# filenames = ["test10k.csv"]
 
 os.chdir('..')
 path = os.getcwd()
@@ -59,9 +53,6 @@ def simpleLinear(filename):
         fStat = (tss - rss)/(rss/(df.shape[0] - 2))
         # print("yhat ->", yhat)
         # print("residuals ->", residuals)
-        # f, ax = plt.subplots(figsize = (6, 4), dpi= 300)
-        # ax.scatter(x, y)
-        # ax.plot(x, yhat, color = 'red')
         elapsed = time.time() - start
         results = {
             "intercept" : {
@@ -94,13 +85,11 @@ def simpleLinear(filename):
         df['residuals'] = pd.Series(residuals).values
         t = PrettyTable(['X', 'Y', 'Yhat', 'residuals'])
         for index, row in df.iterrows():
-            # t.add_row([row['X'], row['Y'], row['yhat'], row['residuals']])
             t.add_row(row)
         print(t)
         return results
 
 def main():
-#    path = os.getcwd()
     filename = path + '\\data\\autoInsur.csv'
     print("+----------+")
     print("Model Output")
@@ -111,7 +100,6 @@ def main():
     print("+-----------------+")
     print("Model File Written.")
     print("+-----------------+")
-    #pprint.pprint(results, width = 1)
 
 if __name__ == "__main__":
     main()
