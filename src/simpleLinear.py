@@ -14,6 +14,9 @@ from prettytable import PrettyTable
 # filenames = ["autoInsur.csv"]
 # filenames = ["test10k.csv"]
 
+os.chdir('..')
+path = os.getcwd()
+
 def simpleLinear(filename):
 
     with open(filename, newline='') as csvFile:
@@ -97,13 +100,13 @@ def simpleLinear(filename):
         return results
 
 def main():
-    path = os.getcwd()
-    filename = path + '\\' + "autoInsur.csv"
+#    path = os.getcwd()
+    filename = path + '\\data\\autoInsur.csv'
     print("+----------+")
     print("Model Output")
     print("+----------+")
     results = simpleLinear(filename)
-    with open('simpleLinearModel.json', 'w') as outfile:
+    with open(path + '\\src\\simpleLinearModel.json', 'w') as outfile:
         json.dump(results, outfile)
     print("+-----------------+")
     print("Model File Written.")
