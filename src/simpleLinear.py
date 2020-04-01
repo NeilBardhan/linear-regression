@@ -51,8 +51,6 @@ def simpleLinear(filename):
         Rsquared = 1 - rss/tss
         adjRsquared = 1 - ((1 - Rsquared) * (df.shape[0] - 1))/(df.shape[0] - 2)
         fStat = (tss - rss)/(rss/(df.shape[0] - 2))
-        # print("yhat ->", yhat)
-        # print("residuals ->", residuals)
         elapsed = time.time() - start
         results = {
             "intercept" : {
