@@ -6,8 +6,6 @@ import pandas as pd
 from scipy import stats
 from prettytable import PrettyTable
 
-# filenames = ["autoInsur.csv"]
-
 os.chdir('..')
 path = os.getcwd()
 
