@@ -8,6 +8,6 @@
 
 Repo for implementations of
   * Linear Regression
-      * Simple Linear Regression
-      * Multiple Linear Regression
+      * Simple Linear
+      * Multiple Linear
       * LASSO
